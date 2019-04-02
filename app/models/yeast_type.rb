@@ -26,4 +26,15 @@ class YeastType < ApplicationRecord
   def self.update_geoms_from_coordinates
     YeastType.update_all("geom = ST_PointFromText(CONCAT('POINT(',longitude,' ',latitude,')'), 4326)")
   end
+
+  def self.yeast_map_data
+    all.map do |yeast_type|
+      {
+        id: yeast_type.id,
+        sequence_name: yeast_type.sequence_name,
+        x: yeast_type.longitude,
+        y: yeast_type.latitude,
+      }
+    end
+  end
 end

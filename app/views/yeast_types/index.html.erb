@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Yeast Types</h1>
+<h1>Yeast Types Map</h1>
+
+<%=
+  content_tag "div",
+    id: "yeast_map",
+    data: {
+      yeast_types: YeastType.yeast_map_data,
+    } do
+%>
+  Loading map...
+<% end %>
+
+<h1>Yeast Types Table</h1>
 
 <table>
   <thead>
