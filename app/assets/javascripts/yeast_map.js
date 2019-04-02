@@ -14,33 +14,9 @@ $(function () {
     var marker = L.marker([yeast_type.y, yeast_type.x]).addTo(map);
 
     marker.bindPopup(
-      "<b><a href='/yeast_types/" + yeast_type.id + "'>" + yeast_type.sequence_name + "</a></b>"
+      "<b><a href='/yeast_types/" + yeast_type.id + "'>" + yeast_type.name + "</a></b>"
     );
 
     yeast_type_markers.push(marker);
   });
-
-  // ---> Geolocation marker
-  function onLocationFound(e) {
-    // Accuracy radius indicator
-    var radius = e.accuracy / 2;
-    L.circle(e.latlng, {radius: radius, stroke: false}).addTo(map);
-
-    // Actual location marker
-    var location_marker_options = {
-      radius: 6,
-      color: 'white',
-      fillColor: '#3388ff',
-      fillOpacity: 1,
-      weight: 2
-    }
-    L.circleMarker(e.latlng, location_marker_options).addTo(map)
-      .bindPopup("You are within " + radius + " meters from this point").openPopup();
-  }
-  map.on('locationfound', onLocationFound);
-
-  function onLocationError(e) {
-    console.log(e.message);
-  }
-  map.on('locationerror', onLocationError);
 });

@@ -66,6 +66,11 @@ class YeastTypesController < ApplicationController
     redirect_to yeast_types_path, notice: "Yeast types imported!"
   end
 
+  def clip
+    sql = YeastType.clip(params[:file])
+    redirect_to yeast_types_path, notice: "Yeast types clipped!"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_yeast_type
