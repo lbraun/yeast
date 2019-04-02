@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sequence_name: MyString
+  mcg: 9.99
+  gvh: 9.99
+  alm: 9.99
+  mit: 9.99
+  erl: 9.99
+  pox: 9.99
+  vac: 9.99
+  nuc: 9.99
+  localization_site: MyString
+  longitude: 9.99
+  latitude: 9.99
+
+two:
+  sequence_name: MyString
+  mcg: 9.99
+  gvh: 9.99
+  alm: 9.99
+  mit: 9.99
+  erl: 9.99
+  pox: 9.99
+  vac: 9.99
+  nuc: 9.99
+  localization_site: MyString
+  longitude: 9.99
+  latitude: 9.99

@@ -1,0 +1,77 @@
+<%= form_with(model: yeast_type, local: true) do |form| %>
+  <% if yeast_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yeast_type.errors.count, "error") %> prohibited this yeast_type from being saved:</h2>
+
+      <ul>
+      <% yeast_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sequence_name %>
+    <%= form.text_field :sequence_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mcg %>
+    <%= form.text_field :mcg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gvh %>
+    <%= form.text_field :gvh %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alm %>
+    <%= form.text_field :alm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mit %>
+    <%= form.text_field :mit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :erl %>
+    <%= form.text_field :erl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pox %>
+    <%= form.text_field :pox %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vac %>
+    <%= form.text_field :vac %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nuc %>
+    <%= form.text_field :nuc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :localization_site %>
+    <%= form.text_field :localization_site %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

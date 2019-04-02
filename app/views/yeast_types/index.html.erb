@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Yeast Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sequence name</th>
+      <th>MCG</th>
+      <th>GVH</th>
+      <th>ALM</th>
+      <th>MIT</th>
+      <th>ERL</th>
+      <th>POX</th>
+      <th>VAC</th>
+      <th>NUC</th>
+      <th>Localization site</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yeast_types.each do |yeast_type| %>
+      <tr>
+        <td><%= yeast_type.sequence_name %></td>
+        <td><%= yeast_type.mcg %></td>
+        <td><%= yeast_type.gvh %></td>
+        <td><%= yeast_type.alm %></td>
+        <td><%= yeast_type.mit %></td>
+        <td><%= yeast_type.erl %></td>
+        <td><%= yeast_type.pox %></td>
+        <td><%= yeast_type.vac %></td>
+        <td><%= yeast_type.nuc %></td>
+        <td><%= yeast_type.localization_site %></td>
+        <td><%= yeast_type.longitude %></td>
+        <td><%= yeast_type.latitude %></td>
+        <td><%= link_to 'Show', yeast_type %></td>
+        <td><%= link_to 'Edit', edit_yeast_type_path(yeast_type) %></td>
+        <td><%= link_to 'Destroy', yeast_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yeast Type', new_yeast_type_path %>
+
+<h4>Upload data file</h4>
+
+<%= form_tag import_yeast_types_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+<% end %>
