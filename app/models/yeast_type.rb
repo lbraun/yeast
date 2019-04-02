@@ -19,5 +19,11 @@ class YeastType < ApplicationRecord
       ]
       YeastType.create!(headers.zip(row).to_h)
     end
+
+    YeastType.update_geoms_from_coordinates
+  end
+
+  def self.update_geoms_from_coordinates
+    YeastType.update_all("geom = ST_PointFromText(CONCAT('POINT(',longitude,' ',latitude,')'), 4326)")
   end
 end
